@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset=UTF-8>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel=stylesheet href=./src/css/style.css>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src=./src/js/index.js defer></script>
+  <link rel="icon" href="./src/images/Valorant-logo.png">
+  <title>Valowise</title>
+</head>
+
+<body>
+  <main>
+    <div id="img-header">
+      <img class="text-img" src="./src/images/valowise-text.png" alt="">
+      <img class="bg-img" src="./src/images/valorant-back-optimized.png" alt="">
+    </div>
+
+    <div id="home" class="page active">
+      <h2>Home</h2>
+      <button id="btn-plus" onclick="displayPage('add-an-expense')">+</button>
+      <div id="months">
+        <div class="month-container" id="month-container">
+          <p id="month-year-text"></p>
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <button class="btn-confirm" onclick="displayPage('users')">Users</button>
+        <button class="btn-confirm" onclick="displayPage('balances')">Balances</button>
+      </div>
+    </div>
+
+    <div id="add-an-expense" class="page">
+      <h2>Add an expense</h2>
+      <form id="form-add-payment">
+        <div id="user-container">
+          <img src="./src/images/user-logo.png" alt="Riot gun buddy">
+          <div class="label-input-container">
+            <label for="selectUser" class="title-label">User</label>
+            <select name="selectUser" id="selectUser">
+              <option name="selectUser" disabled selected>select an option</option>
+            </select>
+          </div>
+        </div>
+        <div id="amount-container">
+          <img src="./src/images/valo-coins.png" alt="Valorant coins image">
+          <div class="label-input-container">
+            <label for="amount" class="title-label">Amount</label>
+            <input type="number" name="amount" id="amount" step="0.01">
+          </div>
+        </div>
+        <div id="title-container">
+          <img src="./src/images/title-logo.png" alt="Valorant champions logo">
+          <div class="label-input-container">
+            <label for="title" class="title-label">Title</label>
+            <input type="text" name="title" id="title" maxlength="20">
+          </div>
+        </div>
+        <div class="btn-container">
+          <button class="btn-cancel" type="button" onclick="displayPage('home')">Back</button>
+          <button class="btn-confirm" type="submit">Confirm</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="balances" class="page">
+      <h2>Balances</h2>
+      <div class="container-users" id="balances-container">
+      </div>
+      <div class="btn-container">
+        <button class="btn-cancel" onclick="displayPage('home')">Home</button>
+        <button id="btn-settle-up" class="btn-confirm">Settle up</button>
+      </div>
+    </div>
+
+    <div id="users" class="page">
+      <h2>Users</h2>
+      <div class="container-users" id="container-users">
+      </div>
+      <div class="btn-container">
+        <button class="btn-cancel" onclick="displayPage('home')">Home</button>
+        <button class="btn-confirm" onclick="displayPage('add-user')">Add user</button>
+      </div>
+    </div>
+
+    <div id="add-user" class="page">
+      <h2>Add user</h2>
+      <form id="myForm">
+        <div id="name-container">
+          <label for="name" class="title-label">Name</label>
+          <input type="text" id="name" name="username" maxlength="12"/>
+        </div>
+        <div id="genre-container">
+          <label class="title-label">Genre</label>
+          <label>
+            <input type="radio" id="female" name="genre" value="female" />
+            <span class="radio-box">♀</span>
+            <span>Female</span>
+          </label>
+          <label>
+            <input type="radio" id="male" name="genre" value="male" />
+            <span class="radio-box">♂</span>
+            <span>Male</span>
+          </label>
+        </div>
+
+        <label class="title-label">Icon</label>
+        <div id="icon-container">
+          <input type="radio" name="icon" id="icon-1">
+          <label for="icon-1"><img src="./src/images/jett-icon.png" alt="Jett avatar"></label>
+          <input type="radio" name="icon" id="icon-2">
+          <label for="icon-2"><img src="./src/images/chamber-icon.png" alt="Chamber avatar"></label>
+          <input type="radio" name="icon" id="icon-3">
+          <label for="icon-3"><img src="./src/images/sage-icon.png" alt="Sage avatar"></label>
+          <input type="radio" name="icon" id="icon-4">
+          <label for="icon-4"><img src="src/images/omen-icon.png" alt="Omen avatar"></label>
+        </div>
+        <div class="btn-container">
+          <button class="btn-cancel" type="button" onclick="displayPage('users')">Back</button>
+          <button class="btn-confirm" type="submit">Confirm</button>
+        </div>
+
+      </form>
+    </div>
+
+  </main>
+  <audio id="background-music" loop autoplay>
+    <source src="./src/audio/menu-audio.mp3" type="audio/mp3">
+</audio>
+</body>
+
+</html>
