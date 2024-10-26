@@ -251,15 +251,3 @@ function updateBalances() {
     balancesContainer.append(userContainer);
   });
 }
-
-// ---MUSIC---
-
-const music = document.getElementById('background-music');
-
-function toggleMusic() {
-    if (music.paused) {
-        music.play(); // Reproduce la música si está en pausa
-    } else {
-        music.pause(); // Pausa la música si está reproduciendo
-    }
-}
